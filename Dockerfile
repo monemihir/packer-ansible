@@ -1,7 +1,9 @@
 FROM hashicorp/packer:latest
 LABEL maintainer="Mihir Mone <monemihir@hotmail.com>"
 
-RUN apk add ansible
+RUN apk add ansible py-pip py-boto
+COPY ansible.cfg /etc/ansible
+RUN pip install pywinrm
 
 RUN ansible --version
 
