@@ -1,13 +1,13 @@
 FROM hashicorp/packer:latest
 LABEL maintainer="Mihir Mone <monemihir@hotmail.com>"
 
-RUN apk add ansible py-pip py-boto
+RUN apk --no-cache add ansible py-pip py-boto
 COPY ansible.cfg /etc/ansible
 RUN pip install pywinrm
 
 RUN ansible --version
 
-RUN apk add docker
+RUN apk --no-cache add docker openrc
 RUN rc-update add docker boot
 
 # Packer needs this set:
