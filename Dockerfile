@@ -1,4 +1,4 @@
-FROM hashicorp/packer:latest
+FROM hashicorp/packer:1.5.0
 LABEL maintainer="Mihir Mone <monemihir@hotmail.com>"
 
 RUN apk --no-cache add ansible py-pip py-boto
